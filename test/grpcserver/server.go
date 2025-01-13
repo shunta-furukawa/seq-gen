@@ -4,8 +4,7 @@ import (
 	"context"
 	"net"
 
-	pb "github.com/shunta-furukawa/seq-gen/test/grpcserver/proto"
-
+	proto "github.com/shunta-furukawa/seq-gen/test/grpcserver/proto/grpcserver"
 	"google.golang.org/grpc"
 )
 
@@ -14,7 +13,7 @@ type SimpleServer struct {
 	pb.UnimplementedTestServiceServer
 }
 
-func (s *SimpleServer) TestMethod(ctx context.Context, req *pb.TestRequest) (*pb.TestResponse, error) {
+func (s *SimpleServer) TestMethod(ctx context.Context, req *proto.TestRequest) (*proto.TestResponse, error) {
 	return &pb.TestResponse{Message: "Hello " + req.Name}, nil
 }
 
