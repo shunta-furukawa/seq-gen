@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	pb "/test/grpcserver/proto"
+	pb "github.com/shunta-furukawa/seq-gen/test/grpcserver/proto"
 
 	"google.golang.org/grpc"
 )
